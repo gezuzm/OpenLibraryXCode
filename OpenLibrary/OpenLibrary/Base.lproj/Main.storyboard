@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OpenLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfj-Lu-z9S">
+                                <rect key="frame" x="174" y="129" width="78" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="78" id="E2P-gF-hFL"/>
+                                </constraints>
+                                <state key="normal" title="Buscar"/>
+                                <connections>
+                                    <action selector="btnBuscar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Wb-Jc-n7z"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ddt-1f-3aA">
+                                <rect key="frame" x="20" y="129" width="146" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="146" id="C7Z-QN-rZ1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="MostrarTeclado:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="dET-Kr-qd5"/>
+                                    <action selector="OcultaTeclado:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="EJx-Ga-OWX"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="S0R-1a-IYX"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Th-CB-Fuw">
+                                <rect key="frame" x="255" y="129" width="78" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="78" id="ctZ-eh-egX"/>
+                                </constraints>
+                                <state key="normal" title="Limpiar"/>
+                                <connections>
+                                    <action selector="btnLimpiar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="twX-yg-Dzg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="escribir ISBN para buscarlo en Open Library" textAlignment="center" lineBreakMode="wordWrap" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iN4-7Q-Imo">
+                                <rect key="frame" x="20" y="54" width="300" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Ynb-Na-el9"/>
+                                    <constraint firstAttribute="width" constant="300" id="z4P-gO-MLo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVB-wD-qUd">
+                                <rect key="frame" x="20" y="208" width="300" height="372"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ddt-1f-3aA" firstAttribute="leading" secondItem="SVB-wD-qUd" secondAttribute="leading" id="2HE-r1-JQL"/>
+                            <constraint firstItem="jfj-Lu-z9S" firstAttribute="baseline" secondItem="7Th-CB-Fuw" secondAttribute="baseline" id="5kV-yq-t8u"/>
+                            <constraint firstItem="iN4-7Q-Imo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9R1-yF-bRB"/>
+                            <constraint firstItem="Ddt-1f-3aA" firstAttribute="top" secondItem="jfj-Lu-z9S" secondAttribute="top" id="AVa-sP-0yN"/>
+                            <constraint firstItem="iN4-7Q-Imo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="K8U-4D-eRU"/>
+                            <constraint firstItem="7Th-CB-Fuw" firstAttribute="leading" secondItem="jfj-Lu-z9S" secondAttribute="trailing" constant="3" id="KMi-Pd-pt5"/>
+                            <constraint firstItem="jfj-Lu-z9S" firstAttribute="leading" secondItem="Ddt-1f-3aA" secondAttribute="trailing" constant="8" symbolic="YES" id="WCC-DK-mnm"/>
+                            <constraint firstAttribute="bottom" secondItem="SVB-wD-qUd" secondAttribute="bottom" constant="20" symbolic="YES" id="XCR-X2-BiK"/>
+                            <constraint firstItem="SVB-wD-qUd" firstAttribute="top" secondItem="Ddt-1f-3aA" secondAttribute="bottom" constant="49" id="dDN-d3-fof"/>
+                            <constraint firstItem="iN4-7Q-Imo" firstAttribute="trailing" secondItem="SVB-wD-qUd" secondAttribute="trailing" id="hJD-Ee-VnS"/>
+                            <constraint firstItem="iN4-7Q-Imo" firstAttribute="leading" secondItem="Ddt-1f-3aA" secondAttribute="leading" id="jEa-td-6LL"/>
+                            <constraint firstItem="Ddt-1f-3aA" firstAttribute="top" secondItem="iN4-7Q-Imo" secondAttribute="bottom" constant="54" id="vkK-gX-GRI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="XCR-X2-BiK" id="1UZ-RO-d6F"/>
+                        <outlet property="tfISBN" destination="Ddt-1f-3aA" id="fbk-Z9-8k8"/>
+                        <outlet property="tvResultado" destination="SVB-wD-qUd" id="fV5-HQ-cZK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="380" y="348"/>
+        </scene>
+    </scenes>
+</document>
